@@ -15,7 +15,7 @@
 % Schrift & Sprache
 \RequirePackage[utf8]{luainputenc}
 \RequirePackage[T1]{fontenc} % T1-Fonts
-\RequirePackage[ngerman]{babel} % Deutsche Sonderzeichen und Silbentrennung (neue Rechtschreibung)
+\RequirePackage[UKenglish]{babel} % Deutsche Sonderzeichen und Silbentrennung (neue Rechtschreibung)
 \usepackage{mathpazo}
 \RequirePackage{marvosym} % diverse Symbole
 \RequirePackage{wasysym} % diverse Symbole 
@@ -132,7 +132,7 @@
 				\Datum\\
 				\Semester
 			  }
-            \rfoot{\thepage\ von \pageref{LastPage}}
+            \rfoot{\thepage\ of \pageref{LastPage}}
 		\addtolength{\headheight}{10mm}
 	}
 
@@ -145,7 +145,7 @@
 		\rhead{\small \textbf{\Datum}}
 		\lhead{\small \textit{\Seminar}}
 		\lfoot{\small \HandoutTitle}
-            \rfoot{\thepage\ von \pageref{LastPage}}
+            \rfoot{\thepage\ of \pageref{LastPage}}
 	}
 	
 % Set the default page style to handout.
