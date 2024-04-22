@@ -28,6 +28,8 @@
 \RequirePackage{setspace}
 \RequirePackage[style=authortitle-dw, backend=bibtex]{biblatex}
 \usepackage[a4paper,bottom=15mm]{geometry} % für Seitenränder, 
+\usepackage{graphicx}
+\usepackage{wrapfig}
 
 
 \pagenumbering{arabic}
@@ -66,6 +68,8 @@
 
 	% change the values if the user sets these commands
 	\newcommand{\SetHandoutTitle}[1]{\renewcommand{\HandoutTitle}{#1}}
+	\newcommand{\SetFrontTitle}[1]{\renewcommand{\FrontTitle}{#1}}
+	\newcommand{\SetFrontSubtitle}[1]{\renewcommand{\FrontSubtitle}{#1}}
 	\newcommand{\SetUniversitaet}[1]{\renewcommand{\Universitaet}{#1}}
 	\newcommand{\SetFakultaet}[1]{\renewcommand{\Fakultaet}{#1}}
 	\newcommand{\SetSemester}[1]{\renewcommand{\Semester}{#1}}
@@ -88,7 +92,8 @@
 		\thispagestyle{handouttitle}
 		\vspace*{-10mm}
 		\begin{center}
-		\LARGE{\HandoutTitle} \\
+		\LARGE{\textbf{\FrontTitle}} \\
+            \large{\FrontSubtitle} \\
 		\end{center}
 		\onehalfspacing 
 	}
@@ -115,20 +120,19 @@
 		\renewcommand\headrulewidth{0.5pt}
 		\renewcommand\footrulewidth{0.5pt}
 		\chead{}
-		\cfoot{\thepage\ von \pageref{LastPage}}
+		\cfoot{}
 		\lhead{ \small
 				\textbf{\Universitaet}\\
 				\textit{\Fakultaet}\\
-				Seminar: \Seminar\\
-				DozentIn: \Dozent
+                \textit{\Seminar}
 			  }	
-		\lfoot{}
+		\lfoot{\small \HandoutTitle}
 		\rhead{\Blank \small
-				ReferentIn: \Referent\\
-				Matrikelnummer: \Matrikelnr\\
-				Datum: \Datum\\
+				\Referent\\
+				\Datum\\
 				\Semester
 			  }
+            \rfoot{\thepage\ von \pageref{LastPage}}
 		\addtolength{\headheight}{10mm}
 	}
 
@@ -137,10 +141,11 @@
 		\renewcommand\headrulewidth{0.5pt}
 		\renewcommand\footrulewidth{0.5pt}
 		\chead{}
-		\cfoot{\thepage\ von \pageref{LastPage}}
-		\rhead{ \Blank \textbf{\small \HandoutTitle} \\  \small \textbf{\Datum} }
-		\lhead{ \small \Seminar \\ \Semester\ }
-		\lfoot{}
+		\cfoot{}
+		\rhead{\small \textbf{\Datum}}
+		\lhead{\small \textit{\Seminar}}
+		\lfoot{\small \HandoutTitle}
+            \rfoot{\thepage\ von \pageref{LastPage}}
 	}
 	
 % Set the default page style to handout.
